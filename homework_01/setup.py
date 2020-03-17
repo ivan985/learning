@@ -7,7 +7,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 setup(
     name='otus_hw_01',
     version='0.1',
-    packages=['otus'],
+    packages=['search'],
     include_package_data=True,
     license='GNU General Public License v3.0',
     description='homework with search',
