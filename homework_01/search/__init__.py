@@ -1,0 +1,1 @@
+from homework_01.search.core import main_search
