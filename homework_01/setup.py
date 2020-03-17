@@ -14,7 +14,7 @@ setup(
     # long_description=README,
     url='https://github.com/ivan985/learning',
     author='Ivan Nikitin',
-    author_email='hikitiniv@leninka.com',
+    author_email='hikitiniv@leninka.ru',
     keywords=['web', 'search'],
     classifiers=[],
 )
