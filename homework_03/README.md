@@ -1,6 +1,6 @@
 <html> 
 <head> 
-<title>homework_03</title> 
+homework_03
 </head> 
 <body> 
 <H1>Домашнее задание по курсу ОТУС</H1> 
