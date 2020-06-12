@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Index auth
+{% endblock %}
+
+{% block body %}
+<h1>Текущий стату авторизации:</h1>
+<ul class="list-group">
+  <li class="list-group-item">Authenticated: {{ current_user.is_authenticated }}</li>
+    {% if current_user.is_authenticated %}
+    <li class="list-group-item">Username: {{ current_user.username }}</li>
+    {% endif %}
+</ul>
+
+<footer>
+<div>
+  <ul class="nav">
+  {% if current_user.is_authenticated != 1%}
+    <li class="nav-item">
+      <a class="nav-link" href="register/">Регистрация</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="login/">Авторизация</a>
+    </li>
+  {% endif %}
+  {% if current_user.is_authenticated == 1%}
+    <li class="nav-item">
+      <a class="nav-link" href="logout/">Выход из системы</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="db_main/">К списку произведений</a>
+    </li>
+  {% endif %}
+    <li class="nav-item">
+      <a class="nav-link" href="/">На главную</a>
+    </li>
+</ul>
+</div>
+</footer>
+
+{% endblock %}

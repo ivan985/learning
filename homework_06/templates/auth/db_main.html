@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Index db
+{% endblock %}
+
+{% block body %}
+
+{% if current_user.is_authenticated != 1%}
+    <h1>Список произведений</h1>
+    <div class="alert alert-primary" role="alert">
+      Для просмотра этой страницы необходима авторизация. Пройдите по
+        <a href="/auth/" class="alert-link">ссылке</a>, чтобы авторизоваться.
+    </div>
+{% endif %}
+
+{% if current_user.is_authenticated == 1%}
+    <h1>Произведения:</h1>
+    <div>
+        <ul>
+            {% for el in titles %}
+            <li>
+                #{{ el[0] }}, <a href="{{ url_for('auth_app.post', title_id=el[0]) }}">{{ el[1] }}</a>, {{ el[2] }}, {{ el[3] }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+<footer>
+    <ul class="nav">
+        {% if current_user.is_authenticated == 1%}
+            <li class="nav-item">
+              <a class="nav-link" href="/auth/logout/">Выход из системы</a>
+            </li>
+        {% endif %}
+        <li class="nav-item">
+            <a class="nav-link" href="/">На главную</a>
+        </li>
+    </ul>
+</footer>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Post
+{% endblock %}
+
+{% block body %}
+
+{% if current_user.is_authenticated != 1%}
+    <h1>Текст произведения</h1>
+    <div class="alert alert-primary" role="alert">
+      Для просмотра этой страницы необходима авторизация. Пройдите по
+        <a href="/auth/" class="alert-link">ссылке</a>, чтобы авторизоваться.
+    </div>
+{% endif %}
+
+{% if current_user.is_authenticated == 1%}
+    <h1>{{ title_name }}</h1>
+    <div>{{ title_text }}</div>
+{% endif %}
+
+<footer>
+    <ul class="nav">
+        {% if current_user.is_authenticated == 1%}
+            <li class="nav-item">
+              <a class="nav-link" href="/auth/logout/">Выход из системы</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/auth/db_main/">К списку произведений</a>
+            </li>
+        {% endif %}
+        <li class="nav-item">
+            <a class="nav-link" href="/">На главную</a>
+        </li>
+    </ul>
+</footer>
+
+{% endblock %}
