@@ -1,7 +1,4 @@
 <html> 
-<head> 
-<title>homework_04</title> 
-</head> 
 <body> 
 <H1>Домашнее задание # 7 по курсу OTUS</H1> 
 <P>Обучающий сайт на выбранную тему</P> 
