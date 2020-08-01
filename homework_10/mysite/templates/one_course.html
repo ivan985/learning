@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %} One course page {% endblock title %}
+
+{% block content %}
+<body>
+    <h1> One course page</h1>
+    {% if one_course %}
+        <h3>Course #{{ one_course.id}}:</h3>
+        <table style="border: 1px solid">
+        <tr style="border: 1px solid">
+            <th style="border: 1px solid">Title</th>
+            <th style="border: 1px solid">Registred on</th>
+            <th style="border: 1px solid">Complexity</th>
+        </tr>
+            <tr style="border: 1px solid">
+                <td style="border: 1px solid"> {{ one_course.title }} </td>
+                <td style="border: 1px solid"> {{ one_course.time_created }} </td>
+                <td style="border: 1px solid"> {{ one_course.complexity }} </td>
+            </tr>
+         </table>
+    {% endif %}
+    {% if not one_course %}
+    <h1> There is no course with this id.</h1>
+    {% endif %}
+</body>
+
+<footer>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="delete_course/">Delete</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="edit_course/">Edit</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/index/">To index</a>
+        </li>
+    </ul>
+</footer>
+{% endblock content %}
