@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Create course {% endblock title %}
+
+{% block content %}
+
+<body>
+<h1> Create course </h1>
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form.as_p }}
+    <button type="submit">Create</button>
+</form>
+</body>
+
+<footer>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/index/">To index</a>
+        </li>
+    </ul>
+</footer>
+
+{% endblock content %}

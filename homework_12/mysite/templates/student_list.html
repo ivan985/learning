@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} All students {% endblock title %}
+
+{% block content %}
+<body>
+<h1> All students </h1>
+<table style="border: 1px solid">
+    <tr style="border: 1px solid">
+        <th style="border: 1px solid">First name</th>
+        <th style="border: 1px solid">Last name</th>
+        <th style="border: 1px solid">Course year</th>
+    </tr>
+{% for student in all_students %}
+    <tr style="border: 1px solid">
+        <td style="border: 1px solid"> {{ student.first_name }} </td>
+        <td style="border: 1px solid"> {{ student.last_name }}</td>
+        <td style="border: 1px solid"> {{ student.course_year }}</td>
+    </tr>
+{% endfor %}
+ </table>
+</body>
+
+{% endblock content %}
